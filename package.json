@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "jsonc": "^2.0.0"
+  },
+  "name": "machine-config",
+  "version": "1.0.0",
+  "description": "scripts for configuring a machine to my liking.",
+  "main": "dist/index.ts",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mind0bender/.machine.config.git"
+  },
+  "author": "Yash Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mind0bender/.machine.config/issues"
+  },
+  "homepage": "https://github.com/mind0bender/.machine.config#readme"
+}

@@ -6,7 +6,7 @@
 #   - Caps Lock → Esc when tapped, Left Ctrl when held
 #   - Esc       → Caps Lock when tapped or held
 #
-# Works on Arch-based systems with `yay` and systemd.
+# Works on Arch-based systems with systemd.
 #
 # ==============================================================================
 
