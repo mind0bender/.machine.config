@@ -1,0 +1,22 @@
+layout {
+  tab hide_floating_panes=true {
+    pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+    }
+    pane {
+      focus true
+      command "sh"
+      args "-c" "nvim .; bash"
+    }
+  }
+  swap_floating_layout {
+    floating_panes min_panes=1 {
+      pane { x "22%"; y "32%"; width 80; height 22; }
+      pane { x "24%"; y "35%"; width 80; height 22; }
+      pane { x "26%"; y "38%"; width 80; height 22; }
+      pane { x "28%"; y "41%"; width 80; height 22; }
+      pane { x "30%"; y "44%"; width 80; height 22; }
+    }
+  }
+}
+
