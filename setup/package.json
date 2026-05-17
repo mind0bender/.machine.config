@@ -1,0 +1,19 @@
+{
+  "name": "setup",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "scripts": {
+    "setup": "bun run src/setup.ts"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "assert": "^2.1.0",
+    "jsonc": "^2.0.0"
+  }
+}
