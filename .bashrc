@@ -5,20 +5,13 @@
 # (don't mess with these directly, just overwrite them here!)
 source ~/.local/share/omarchy/default/bash/rc
 
-# Add your own exports, aliases, and functions here.
-#
-# Make an alias for invoking commands you use constantly
-# alias p='python'
-alias please='sudo'
-
 export PATH=$PATH:/snap/bin
-
 
 . "$HOME/.local/share/../bin/env"
 
 # wrap conda in hashing enabled (else anaconda throws error)
 set -h
-# >>> conda initialize >>>
+# >>> conda initialize Begin >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/mind0bender/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
@@ -32,23 +25,17 @@ else
 fi
 
 unset __conda_setup
-# <<< conda initialize <<<
+# <<< conda initialize End <<<
 set +h
 
-alias arduino-ide='arduino-ide --ozone-platform=x11'
-       
 eval "$(thefuck --alias)"
 . "$HOME/.cargo/env"
 
 export PATH="/home/mind0bender/.cache/.bun/bin:$PATH"
 
-alias dim='brightnessctl set 10%-'
-alias bright='brightnessctl set +10%'
-
-# <<< zellij setup >>>
-# custom session picker for zellij
+# >>> zellij setup Begin >>>
 zj-pick() {
-  if gum confirm "Attach to existing session?" --affirmative="Existing" --negative="New"; then
+  if gum confirm "Resume your previous work?" --affirmative="Reattach" --negative="Create"; then
       local session
       session=$(zellij list-sessions -s | gum filter --placeholder "Pick a session")
       [ -n "$session" ] && zellij attach "$session"
@@ -63,9 +50,17 @@ zj-pick() {
   fi
 }
 
+if [ -z "$ZELLIJ" ]; then
+  zj-pick
+fi
+
 # Zellij Auto-start (default)
 # eval "$(zellij setup --generate-auto-start bash)"
+# <<< Zellij setup End <<<
 
-zj-pick
-
-# oss idea: gum time does not throuw error wnen invalid time is given, so we need to check if the input is valid before calling gum time
+# >>> Custom Aliases Begin >>>
+alias please='sudo'
+alias dim='brightnessctl set 10%-'
+alias bright='brightnessctl set +10%'
+alias arduino-ide='arduino-ide --ozone-platform=x11'
+# <<< Custom Aliases End <<<
